@@ -31,7 +31,6 @@ RUN usermod -a -G users www-data
 # App dir
 RUN mkdir -p /var/www
 WORKDIR /var/www
-VOLUME /var/www
 
 CMD ["php-fpm"]
 EXPOSE 9000

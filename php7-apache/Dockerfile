@@ -43,4 +43,8 @@ RUN ln -sf /dev/stderr /var/log/apache2/error.log
 RUN usermod -u 1000 www-data
 RUN usermod -a -G users www-data
 
+# App dir
+RUN mkdir -p /var/www
+WORKDIR /var/www
+
 EXPOSE 80 443
