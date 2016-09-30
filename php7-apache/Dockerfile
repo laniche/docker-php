@@ -43,5 +43,4 @@ RUN ln -sf /dev/stderr /var/log/apache2/error.log
 RUN usermod -u 1000 www-data
 RUN usermod -a -G users www-data
 
-ONBUILD RUN composer install
 EXPOSE 80 443

@@ -28,6 +28,10 @@ RUN chmod +x /usr/bin/composer
 RUN usermod -u 1000 www-data
 RUN usermod -a -G users www-data
 
-ONBUILD RUN composer install
+# App dir
+RUN mkdir -p /var/www
+WORKDIR /var/www
+VOLUME /var/www
+
 CMD ["php-fpm"]
 EXPOSE 9000
