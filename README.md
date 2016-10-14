@@ -2,6 +2,17 @@
 
 Create PHP micro-services that we can use for developments at Dogstudio.
 
+## Versions
+
+* `latest`, `7-apache` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php7-apache/Dockerfile)
+* `5.6-apache` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-apache/Dockerfile)
+* `5.6-mailcatcher` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-mailcatcher/Dockerfile)
+
+* `7-fpm` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php7-fpm/Dockerfile)
+* `5.6-fpm` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-fpm/Dockerfile)
+
+## Usage
+
 You can use this containter directly with `php56-apache` and `php7-apache` tags.
 Or with a web proxy, like `nginx` with `php56-fpm` and `php7-fpm` tags.
 
