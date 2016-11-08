@@ -34,7 +34,7 @@ xdebug.max_nesting_level=400\n\
 xdebug.var_display_max_depth=10\n\
 ">> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-ADD 000-default.conf /etc/apache2/sites-available/
+COPY 000-default.conf /etc/apache2/sites-available/
 RUN a2ensite 000-default
 RUN a2enmod rewrite
 

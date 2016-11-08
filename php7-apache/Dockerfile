@@ -2,15 +2,18 @@ FROM php:7-apache
 MAINTAINER Dogstudio <developers@dogstudio.be>
 
 RUN apt-get update && apt-get install -y \
+        mcrypt wget zip unzip git \
         build-essential \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
-        libpng12-dev
+        libpng12-dev \
+        libicu-dev g++ libicu52
 
 RUN docker-php-ext-install iconv sockets mbstring mcrypt mysqli pdo pdo_mysql \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd \
+    && docker-php-ext-install intl
 
 # Configure PHP
 RUN echo "max_execution_time = 6000\n\
@@ -34,7 +37,7 @@ xdebug.max_nesting_level=400\n\
 xdebug.var_display_max_depth=10\n\
 ">> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-ADD 000-default.conf /etc/apache2/sites-available/
+COPY 000-default.conf /etc/apache2/sites-available/
 RUN a2ensite 000-default
 RUN a2enmod rewrite
 

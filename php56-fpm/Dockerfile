@@ -35,7 +35,6 @@ xdebug.max_nesting_level=400\n\
 xdebug.var_display_max_depth=10\n\
 ">> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 RUN chmod +x /usr/bin/composer
