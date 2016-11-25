@@ -1,0 +1,4 @@
+FROM dogstudio/php:5.6-apache
+MAINTAINER Dogstudio <developers@dogstudio.be>
+
+${MAILCATCHER}

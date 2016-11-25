@@ -1,25 +1,15 @@
 FROM php:7-apache
 MAINTAINER Dogstudio <developers@dogstudio.be>
 
-RUN apt-get update && apt-get install -y \
-        mcrypt wget zip unzip git \
-        build-essential \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libmcrypt-dev \
-        libpng12-dev \
-        libicu-dev g++ libicu52
+RUN apt-get update && apt-get install -y         mcrypt wget zip unzip git         build-essential         libfreetype6-dev         libjpeg62-turbo-dev         libmcrypt-dev         libpng12-dev         libicu-dev g++ libicu52
 
-RUN docker-php-ext-install iconv sockets mbstring mcrypt mysqli pdo pdo_mysql \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd \
-    && docker-php-ext-install intl
+RUN docker-php-ext-install iconv sockets mbstring mcrypt mysqli pdo pdo_mysql     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/     && docker-php-ext-install gd     && docker-php-ext-install intl
 
 # Configure PHP
 RUN echo "max_execution_time = 6000\n\
 memory_limit = 120M\n\
-upload_max_filesize = 10M\n\
-max_file_uploads = 10\n\
+upload_max_filesize = 2M\n\
+max_file_uploads = 20\n\
 default_charset = \"UTF-8\"\n\
 date.timezone = \"Europe/Brussels\"\n\
 short_open_tag = Off" > /usr/local/etc/php/php.ini
