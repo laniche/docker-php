@@ -19,9 +19,7 @@ ${PHPINI}
 
 ${XDEBUG}
 
-# Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
-RUN chmod +x /usr/bin/composer
+${COMPOSER}
 
 RUN usermod -u 1000 www-data
 RUN usermod -a -G users www-data

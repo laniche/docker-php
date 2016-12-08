@@ -1,9 +1,9 @@
 FROM php:5.6-apache
 MAINTAINER Dogstudio <developers@dogstudio.be>
 
-RUN apt-get update && apt-get install -y         build-essential         libfreetype6-dev         libjpeg62-turbo-dev         libmcrypt-dev         libpng12-dev
+RUN apt-get update && apt-get install -y     mcrypt wget zip unzip git     build-essential     libfreetype6-dev     libjpeg62-turbo-dev     libmcrypt-dev     libpng12-dev     libicu-dev g++ libicu52
 
-RUN docker-php-ext-install iconv sockets mbstring mcrypt mysql mysqli pdo pdo_mysql     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/     && docker-php-ext-install gd
+RUN docker-php-ext-install iconv sockets mbstring mcrypt mysql mysqli pdo pdo_mysql     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/     && docker-php-ext-install gd     && docker-php-ext-install intl
 
 # Configure PHP
 RUN echo "max_execution_time = 6000\n\
@@ -26,6 +26,10 @@ xdebug.extended_info=on\n\
 xdebug.max_nesting_level=400\n\
 xdebug.var_display_max_depth=10\n\
 ">> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+# Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+RUN chmod +x /usr/bin/composer
 
 COPY 000-default.conf /etc/apache2/sites-available/
 RUN a2ensite 000-default
