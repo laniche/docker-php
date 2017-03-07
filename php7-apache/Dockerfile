@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM php:7.0-apache
 MAINTAINER Dogstudio <developers@dogstudio.be>
 
 RUN apt-get update && apt-get install -y     mcrypt wget zip unzip git     build-essential     libfreetype6-dev     libjpeg62-turbo-dev     libmcrypt-dev     libpng12-dev     libicu-dev g++ libicu52
