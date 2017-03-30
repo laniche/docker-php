@@ -1,4 +1,4 @@
-FROM php:7.0
+FROM php:7
 MAINTAINER Dogstudio <developers@dogstudio.be>
 
 RUN apt-get update && apt-get install -y       mcrypt wget zip unzip git       build-essential       libfreetype6-dev       libjpeg62-turbo-dev       libmcrypt-dev       libpng12-dev       libicu-dev g++ libicu52
@@ -20,7 +20,7 @@ xdebug.enable=1\n\
 xdebug.remote_enable=1\n\
 xdebug.remote_connect_back=0\n\
 xdebug.remote_port=9000\n\
-xdebug.remote_host=\"192.168.65.1\"\n\
+xdebug.remote_host=\"192.168.99.1\"\n\
 xdebug.idekey=\"PHPSTORM\"\n\
 xdebug.extended_info=on\n\
 xdebug.max_nesting_level=400\n\
