@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y       mcrypt wget zip unzip git       b
 RUN docker-php-ext-install iconv sockets mbstring mcrypt mysqli pdo pdo_mysql     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/     && docker-php-ext-install gd     && docker-php-ext-install intl
 
 # Configure PHP
-RUN echo "max_execution_time = 6000\n\
+RUN echo -e "max_execution_time = 6000\n\
 memory_limit = 120M\n\
 upload_max_filesize = 2M\n\
 max_file_uploads = 20\n\
@@ -15,7 +15,7 @@ date.timezone = \"Europe/Brussels\"\n\
 short_open_tag = Off" > /usr/local/etc/php/php.ini
 
 # Configure xDebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug && echo "\
+RUN pecl install xdebug && docker-php-ext-enable xdebug && echo -e "\
 xdebug.enable=1\n\
 xdebug.remote_enable=1\n\
 xdebug.remote_connect_back=0\n\
