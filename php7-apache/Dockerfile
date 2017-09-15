@@ -34,6 +34,8 @@ RUN chmod +x /usr/bin/composer
 COPY 000-default.conf /etc/apache2/sites-available/
 RUN a2ensite 000-default
 RUN a2enmod rewrite
+RUN a2enmod headers
+RUN a2enmod expires
 
 RUN ln -sf /dev/stdout /var/log/apache2/access.log
 RUN ln -sf /dev/stderr /var/log/apache2/error.log

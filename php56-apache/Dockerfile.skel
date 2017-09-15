@@ -24,6 +24,8 @@ ${COMPOSER}
 COPY 000-default.conf /etc/apache2/sites-available/
 RUN a2ensite 000-default
 RUN a2enmod rewrite
+RUN a2enmod headers
+RUN a2enmod expires
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
