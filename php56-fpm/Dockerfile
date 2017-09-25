@@ -12,7 +12,7 @@ upload_max_filesize = 2M\n\
 max_file_uploads = 20\n\
 default_charset = \"UTF-8\"\n\
 date.timezone = \"Europe/Brussels\"\n\
-short_open_tag = Off" > /usr/local/etc/php/php.ini
+short_open_tag = On" > /usr/local/etc/php/php.ini
 
 # Configure xDebug
 RUN pecl install xdebug && docker-php-ext-enable xdebug && echo -e "\
