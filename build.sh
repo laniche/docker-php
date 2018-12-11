@@ -9,11 +9,9 @@ for DOCKER_CONF in $(ls -1 conf/* 2>/dev/null); do
 done
 
 # Build dockerfiles
-for DOCKER_SKEL in $(ls -1 **/*.skel 2>/dev/null); do 
+for DOCKER_SKEL in $(ls -1 **/*.skel 2>/dev/null); do
     DOCKER_PATH=$(dirname $DOCKER_SKEL)
 
-    echo "Build: $DOCKER_PATH"; 
+    echo "Build: $DOCKER_PATH";
     eval "echo \"$(cat $DOCKER_SKEL)\"" > $DOCKER_PATH/Dockerfile
 done
-
-
