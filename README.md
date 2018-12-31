@@ -7,11 +7,14 @@ Create PHP micro-services that we can use for developments at Dogstudio.
 * `latest`, `stable`, `7.3-apache` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php73-apache/Dockerfile)
 * `7.1-apache` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php71-apache/Dockerfile)
 * `7-apache` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php7-apache/Dockerfile)
+* `7-fpm` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php7-fpm/Dockerfile)
 * `5.6-apache` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-apache/Dockerfile)
+* `5.6-fpm` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-fpm/Dockerfile)
 * `5.6-mailcatcher` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-mailcatcher/Dockerfile)
 
-* `7-fpm` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php7-fpm/Dockerfile)
-* `5.6-fpm` [Dockerfile](https://github.com/Dogstudio/docker-php/blob/master/php56-fpm/Dockerfile)
+## Build
+
+Use `make` to prepare the Dockerfiles and test the build. See the `makefile` for sub-commands.
 
 ## Usage
 

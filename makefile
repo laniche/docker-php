@@ -1,9 +1,11 @@
-configure:
-	scripts/configure.sh
+.PHONY: all
+all: build
 
 build: configure
 	scripts/build.sh
 
-all: build
+configure: clean
+	scripts/configure.sh
 
-.PHONY: all
+clean:
+	find . -name "Dockerfile" | xargs rm -Rf {} \;
