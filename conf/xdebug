@@ -1,5 +1,5 @@
 # Configure xDebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug && echo -e "\
+RUN echo -e "\
 xdebug.enable=1\n\
 xdebug.remote_enable=1\n\
 xdebug.remote_connect_back=0\n\
