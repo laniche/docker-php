@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:7.3-apache
 MAINTAINER Dogstudio <developers@dogstudio.be>
 
 RUN apt-get update && apt-get install -y     mcrypt wget zip unzip git     build-essential     libfreetype6-dev     libjpeg62-turbo-dev     libmcrypt-dev     libpng12-dev     libicu-dev g++ libicu52
@@ -7,8 +7,8 @@ RUN docker-php-ext-install iconv sockets mbstring mcrypt mysqli pdo pdo_mysql zi
 
 # Configure PHP
 RUN echo -e "max_execution_time = 6000\n\
-memory_limit = 120M\n\
-upload_max_filesize = 2M\n\
+memory_limit = 256M\n\
+upload_max_filesize = 20M\n\
 max_file_uploads = 20\n\
 default_charset = \"UTF-8\"\n\
 date.timezone = \"Europe/Brussels\"\n\
