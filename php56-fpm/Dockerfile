@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng-dev \
-    libicu-dev
+    libicu-dev \
+    libzip-dev
 
 RUN docker-php-ext-install iconv sockets mbstring mcrypt mysql mysqli pdo pdo_mysql \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
@@ -19,8 +20,9 @@ RUN docker-php-ext-install iconv sockets mbstring mcrypt mysql mysqli pdo pdo_my
 RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
 
 # Configure PHP
-RUN echo -e "max_execution_time = 6000\n\
-memory_limit = 256M\n\
+RUN echo -e "\
+max_execution_time = 6000\n\
+memory_limit = 1G\n\
 upload_max_filesize = 20M\n\
 max_file_uploads = 20\n\
 default_charset = \"UTF-8\"\n\

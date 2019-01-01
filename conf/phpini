@@ -1,6 +1,7 @@
 # Configure PHP
-RUN echo -e "max_execution_time = 6000\n\
-memory_limit = 256M\n\
+RUN echo -e "\
+max_execution_time = 6000\n\
+memory_limit = 1G\n\
 upload_max_filesize = 20M\n\
 max_file_uploads = 20\n\
 default_charset = \"UTF-8\"\n\

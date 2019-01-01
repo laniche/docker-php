@@ -5,6 +5,8 @@ ${PHP7}
 
 ${PHPINI}
 
+RUN pecl install xdebug-2.7.0beta1 \
+    && docker-php-ext-enable xdebug
 ${XDEBUG}
 
 ${COMPOSER}
