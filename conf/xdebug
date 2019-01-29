@@ -1,5 +1,5 @@
 # Configure xDebug
-RUN echo -e "\
+RUN echo "\
 xdebug.enable=1\n\
 xdebug.remote_enable=1\n\
 xdebug.remote_connect_back=0\n\

@@ -12,4 +12,3 @@ RUN docker-php-ext-install iconv sockets mbstring mysqli pdo pdo_mysql \
     && docker-php-ext-install gd \
     && docker-php-ext-install intl \
     && docker-php-ext-install zip
-

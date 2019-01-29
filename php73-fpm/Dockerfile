@@ -17,7 +17,7 @@ RUN docker-php-ext-install iconv sockets mbstring mysqli pdo pdo_mysql \
     && docker-php-ext-install zip
 
 # Configure PHP
-RUN echo -e "\
+RUN echo "\
 max_execution_time = 6000\n\
 memory_limit = 1G\n\
 upload_max_filesize = 20M\n\
@@ -28,7 +28,7 @@ short_open_tag = On" > /usr/local/etc/php/php.ini
 
 RUN pecl install xdebug-2.7.0beta1     && docker-php-ext-enable xdebug
 # Configure xDebug
-RUN echo -e "\
+RUN echo "\
 xdebug.enable=1\n\
 xdebug.remote_enable=1\n\
 xdebug.remote_connect_back=0\n\
